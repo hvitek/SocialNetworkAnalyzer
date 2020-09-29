@@ -1,0 +1,50 @@
+﻿@model SocialNetworkAnalyzer.Models.DatasetDetailViewModel
+@{
+    ViewData["Title"] = "Dataset detail";
+}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        Render();
+        GetNodes(@Model.Id);
+        GetEdges(@Model.Id);
+});
+</script>
+<div class="text-center">
+    <h1 class="display-4">Detail</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">Id</div>
+    <div class="col-sm-9">@Model.Id</div>
+    <div class="col-sm-3">Name</div>
+    <div class="col-sm-9">@Model.Name</div>
+    <div class="col-sm-3">Description</div>
+    <div class="col-sm-9">@Model.Description</div>
+    <div class="col-sm-3">Users in dataset</div>
+    <div class="col-sm-9">@Model.Users</div>
+    <div class="col-sm-3">Avg of friends per user</div>
+    <div class="col-sm-9">@Model.NumOfFriendsAvg</div>
+    <div class="col-sm-3">Unique connections</div>
+    <div class="col-sm-9">@Model.Edges</div>
+
+    @if (Model.Users == 0)
+    {
+
+        <div style="margin-top:50px" class="col-sm-12">Upload txt. file with two number separeted by space per line</div>
+
+        <form action="/Dataset/UploadNewDataset"
+              enctype="multipart/form-data"
+              method="post">
+
+            <input type="file" class="btn btn-secondary" id="FormFile" name="FormFile" />
+            <input type="number" hidden id="DatasetId" name="DatasetId" value="@Model.Id" />
+            <input type="submit" class="btn btn-primary" value="Upload" />
+        </form>
+    }
+</div>
+<div id="cy" style="min-width: 600px;
+    min-height: 600px;
+    display: block;">
+</div>
+<script>
+</script>

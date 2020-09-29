@@ -1,0 +1,25 @@
+﻿@model List<SocialNetworkAnalyzer.Models.DatasetDetailViewModel>
+@{
+    ViewData["Title"] = "List of Datasets";
+}
+
+<div class="text-center">
+    <h1 class="display-4">List of existing datasets</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">@Html.ActionLink("New Dataset", "Create", "Dataset", null, null)</div>
+
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-12">--------------------------------------------------------------------</div>
+        <div class="col-sm-3">Id</div>
+        <div class="col-sm-9">@item.Id</div>
+        <div class="col-sm-3">Name</div>
+        <div class="col-sm-9">@item.Name</div>
+        <div class="col-sm-3">Description</div>
+        <div class="col-sm-9">@item.Description</div>
+        <div class="col-sm-12">@Html.ActionLink("Detail", "Detail", "Dataset", new { id = item.Id }, null)</div>
+        <div class="col-sm-12">--------------------------------------------------------------------</div>
+    }
+</div>

@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">SocialNetworkAnalyzer</h1>
+    <h5>- .NET Core 3</h5>
+    <h5>- SQLite</h5>
+    <h5>- EntityFramework</h5>
+    <h5>- cytoscape.js</h5>
+    <p>Let's try to create new dataset and upload data. If you want, you can use these datasets: <a href="~/datasets/small.txt">#1</a>, <a href="~/datasets/middle.txt">#2</a> or <a href="~/datasets/big.txt">#3</a></p>
+    <p>Application, thanks to the EntityFramework, already created the database and applied a migrations</p>
+    <p>Please, be patient during processing big files. Even we writing straight to dbContext, inserting 88k rows to sqlite can take a while. There are many workarounds (no EF, inmemory db, insertig by execution of ExecuteNonQuery..), but I decided to use  EF, event if user have to wait. If  would  performance be one of exercise requirment, I would definitly choose diferent solution.</p>
+    <p>Also cytoscape.js is not really optimized for big datasets</p>
+    <p><img bor src="~/preview.png" /></p>
+</div>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Create new dataset";
+}
+<h1>@ViewData["Title"]</h1>
+
+<div>
+
+    <form class="form-group" asp-controller="Dataset" asp-action="Create" method="post">
+        <div class="form-group">
+            <label for="Name">Name</label>
+            <input class="form-control" type="text" id="Name" name="Name" placeholder="Enter Name" />
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            <input class="form-control" type="text" id="Description" name="Description" placeholder="Enter Description" />
+        </div>
+        <button type="submit" class="btn btn-dark">Create</button>
+    </form>
+</div>

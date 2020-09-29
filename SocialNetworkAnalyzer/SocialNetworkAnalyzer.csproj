@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="database.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="database.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SocialNetworkAnalyzer.Core\SocialNetworkAnalyzer.Core.csproj" />
+    <ProjectReference Include="..\SocialNetworkAnalyzer.EntityFrameworkCore\SocialNetworkAnalyzer.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>
